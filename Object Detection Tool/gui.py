@@ -15,7 +15,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QApplication, QWidget, QInputDialog, QLineEdit,QFileDialog
 from PyQt5.QtGui import QIcon, QImage
 from PyQt5.QtGui import QPixmap
-#import ThisIsML 
+import ThisIsML 
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -174,7 +174,7 @@ class Ui_MainWindow(object):
         self.r3.clicked.connect(self.R3)
         self.nextimage.clicked.connect(self.NextImg)
         self.preimage.clicked.connect(self.PretImg)
-        self.save.clicked.connect(self.SAVE)
+        #self.save.clicked.connect(self.SAVE)
         
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -224,14 +224,14 @@ class Ui_MainWindow(object):
         print(self.path)
         print(self.model)
         self.pixmap = QPixmap((self.path))
-        #image = ThisIsML.GiveMePathsReturnsListOfImg(self.path, self.toDetectOnlyThese ,self.model ,detection_score=detection_score)
-        #image = QtGui.QImage(image, image.shape[1],image.shape[0], image.shape[1] * 3,QtGui.QImage.Format_RGB888)
-        #pix = QtGui.QPixmap(image)
+        image = ThisIsML.GiveMePathsReturnsListOfImg(self.path, self.toDetectOnlyThese ,self.model ,detection_score=detection_score)
+        image = QtGui.QImage(image, image.shape[1],image.shape[0], image.shape[1] * 3,QtGui.QImage.Format_RGB888)
+        pix = QtGui.QPixmap(image)
         
         print("Function executed:")
         
-        #self.image2.setPixmap(pix)
-        #self.image2.setScaledContents(True)
+        self.image2.setPixmap(pix)
+        self.image2.setScaledContents(True)
         
         
     def open_folder(self):
