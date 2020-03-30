@@ -1,2 +1,2 @@
-This is a 5 layers Sequential Convolutional Neural Network for digits recognition trained on MNIST dataset. I built it with keras API (Tensorflow backend). Firstly, I will prepared the data (handwritten digits images) then i will focus on the CNN modeling and evaluation.
+This is a 5 layers Sequential Convolutional Neural Network for digits recognition trained on MNIST dataset. I built it with keras API (Tensorflow backend). Firstly, I prepared the data (handwritten digits images) then I focused on the CNN modeling and evaluation.
 My submission on Kaggle achieved 99.17% accuracy.
