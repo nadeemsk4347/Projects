@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-
-# Form implementation generated from reading ui file 'Assignment.ui'
-#
-# Created by: PyQt5 UI code generator 5.9.2
-#
-# WARNING! All changes made in this file will be lost!
 
 import os
 from os import walk
@@ -56,21 +49,17 @@ class Ui_MainWindow(object):
         self.selectmodel.setGeometry(QtCore.QRect(0, 30, 171, 41))
         self.selectmodel.setObjectName("selectmodel")
         
-        
         self.r1 = QtWidgets.QRadioButton(self.groupBox_2)
         self.r1.setGeometry(QtCore.QRect(10, 90, 161, 31))
         self.r1.setObjectName("r1")
-        
         
         self.r2 = QtWidgets.QRadioButton(self.groupBox_2)
         self.r2.setGeometry(QtCore.QRect(10, 130, 161, 31))
         self.r2.setObjectName("r2")
         
-        
         self.r3 = QtWidgets.QRadioButton(self.groupBox_2)
         self.r3.setGeometry(QtCore.QRect(10, 170, 161, 31))
         self.r3.setObjectName("r3")
-        
         
         self.label_2 = QtWidgets.QLabel(self.groupBox_2)
         self.label_2.setGeometry(QtCore.QRect(10, 210, 161, 21))
@@ -103,41 +92,30 @@ class Ui_MainWindow(object):
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         
-        
-        
-        
-        
         self.person = QtWidgets.QCheckBox(self.groupBox_2)
         self.person.setGeometry(QtCore.QRect(20, 310, 151, 41))
         self.person.setObjectName("person")
         self.person.stateChanged.connect(lambda: self.clickBox(self.person))
-        
         
         self.car = QtWidgets.QCheckBox(self.groupBox_2)
         self.car.setGeometry(QtCore.QRect(20, 360, 151, 41))
         self.car.setObjectName("car")
         self.car.stateChanged.connect(lambda: self.clickBox(self.car))
         
-        
         self.airplane = QtWidgets.QCheckBox(self.groupBox_2)
         self.airplane.setGeometry(QtCore.QRect(20, 410, 151, 41))
         self.airplane.setObjectName("airplane")
         self.airplane.stateChanged.connect(lambda: self.clickBox(self.airplane))
-        
         
         self.dog = QtWidgets.QCheckBox(self.groupBox_2)
         self.dog.setGeometry(QtCore.QRect(20, 460, 151, 41))
         self.dog.setObjectName("dog")
         self.dog.stateChanged.connect(lambda: self.clickBox(self.dog))
         
-        
         self.apple = QtWidgets.QCheckBox(self.groupBox_2)
         self.apple.setGeometry(QtCore.QRect(20, 510, 151, 41))
         self.apple.setObjectName("apple")
         self.apple.stateChanged.connect(lambda: self.clickBox(self.apple))
-        
-        
-        
         
         self.label_3 = QtWidgets.QLabel(self.groupBox_2)
         self.label_3.setGeometry(QtCore.QRect(16, 270, 151, 41))
@@ -178,13 +156,7 @@ class Ui_MainWindow(object):
         
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-        """
-    def SAVE(self):
-        bytes = QByteArray()
-        QBuffer buffer(&bytes)
-        buffer.open(QIODevice::WriteOnly)
-        pixmap.save(&buffer, "PNG")
-        pass"""
+        
     def clickBox(self,b):
         if b.isChecked() == True:
             self.toDetectOnlyThese.append(b.text())
@@ -203,7 +175,6 @@ class Ui_MainWindow(object):
     def PretImg(self):
         print(self.index)
         self.path = self.images[self.index-1]
-        
         pixmap = QPixmap(self.path)
         self.image.setPixmap(pixmap)
         self.image.setScaledContents(True)
@@ -216,9 +187,8 @@ class Ui_MainWindow(object):
     def R3(self):
         self.model = 2
         
+        
     def RunTheCode(self):
-        
-        
         detection_score = float(self.comboBox.currentText())
         #Now we have path and the model, Make use of self.model also
         print(self.path)
@@ -227,12 +197,9 @@ class Ui_MainWindow(object):
         image = ThisIsML.GiveMePathsReturnsListOfImg(self.path, self.toDetectOnlyThese ,self.model ,detection_score=detection_score)
         image = QtGui.QImage(image, image.shape[1],image.shape[0], image.shape[1] * 3,QtGui.QImage.Format_RGB888)
         pix = QtGui.QPixmap(image)
-        
         print("Function executed:")
-        
         self.image2.setPixmap(pix)
         self.image2.setScaledContents(True)
-        
         
     def open_folder(self):
         file = QFileDialog.getExistingDirectory()
@@ -241,8 +208,6 @@ class Ui_MainWindow(object):
         self.images = [join(mypath, f) for f in listdir(mypath) if isfile(join(mypath, f))]
         self.size = len(self.images)
         
-        
-
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
@@ -288,12 +253,8 @@ class Ui_MainWindow(object):
         self.car.setText(_translate("MainWindow", "car"))
         self.dog.setText(_translate("MainWindow", "dog"))      
         
-        
-        
         self.label_3.setText(_translate("MainWindow", "Label Filter"))
         self.image.setText(_translate("MainWindow", "TextLabel"))
-
-            
 
 if __name__ == "__main__":
     import sys
@@ -303,21 +264,3 @@ if __name__ == "__main__":
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
-
-    #def file_open(self):
-     #   print("Button pressed")
-      #  self.open_dialog_box()
-    #
-    #def open_dialog_box(self):
-     #   #filename = QFileDialog.getOpenFileName()
-        #path = filename[0]
-        #self.path = path
-        #print(path)
-        #pixmap = QPixmap(path)
-        #self.image.setPixmap(pixmap)
-        #self.image.setScaledContents(True)
-      #  file = QFileDialog.getExistingDirectory(self, "Select Directory")
-      # print(file)
-        
-        #with open(path,"r") as f:
-        #    print(f.readline())
