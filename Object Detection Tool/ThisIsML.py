@@ -165,7 +165,7 @@ def run_inference_for_single_image(image, graph):
 
 # In[18]:
 
-
+"""
 image = GiveMePathsReturnsListOfImg('/home/nadeem/Desktop/Python/Tensorflow/models/research/object_detection/test_images/image/image1.jpg')
 IMAGE_SIZE = (12, 8)
     #plt.figure(figsize=IMAGE_SIZE)
@@ -173,5 +173,5 @@ plt.imshow(image)
 height, width, channel = image.shape
 bytesPerLine = 3 * width
     #qImg = QImage(cvImg.data, width, height, bytesPerLine, QImage.Format_RGB888)
-
+"""
 
