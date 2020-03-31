@@ -13,7 +13,7 @@ import ThisIsML
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(800, 496)
+        MainWindow.resize(800, 1000)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.groupBox = QtWidgets.QGroupBox(self.centralwidget)
@@ -38,6 +38,9 @@ class Ui_MainWindow(object):
         self.detect = QtWidgets.QPushButton(self.groupBox)
         self.detect.setGeometry(QtCore.QRect(10, 360, 161, 61))
         self.detect.setObjectName("detect")
+        self.quit = QtWidgets.QPushButton(self.groupBox)
+        self.quit.setGeometry(QtCore.QRect(10, 440, 161, 61))
+        self.quit.setObjectName("quit")
         self.groupBox_2 = QtWidgets.QGroupBox(self.centralwidget)
         self.groupBox_2.setGeometry(QtCore.QRect(610, 0, 181, 571))
         font = QtGui.QFont()
@@ -147,6 +150,7 @@ class Ui_MainWindow(object):
         
         self.openfolder.clicked.connect(self.open_folder)   
         self.detect.clicked.connect(self.RunTheCode)
+        self.quit.clicked.connect(QtWidgets.qApp.quit)
         self.r1.clicked.connect(self.R1)
         self.r2.clicked.connect(self.R2)
         self.r3.clicked.connect(self.R3)
@@ -156,6 +160,9 @@ class Ui_MainWindow(object):
         
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        
+    def clos(self):
+        pass
         
     def clickBox(self,b):
         if b.isChecked() == True:
@@ -217,6 +224,7 @@ class Ui_MainWindow(object):
         self.preimage.setText(_translate("MainWindow", "Pre Image"))
         self.save.setText(_translate("MainWindow", "Save"))
         self.detect.setText(_translate("MainWindow", "Detect"))
+        self.quit.setText(_translate("MainWindow", "quit"))
         self.groupBox_2.setTitle(_translate("MainWindow", "GroupBox"))
         self.selectmodel.setText(_translate("MainWindow", "Select Model"))
         
