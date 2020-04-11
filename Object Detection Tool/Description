@@ -1,3 +1,4 @@
 This is a PyQt (python) based auto labelling tool.
 Where in we can load a tensorflow model(frozen graph) and load a folder containing images.
 Model runs inference on images and draws bounding boxes around the detected boxes.
+https://drive.google.com/drive/folders/1JYhjN_NiZZEydp3otFYBEmTZskRKcSdk?usp=sharing This is How it works!!
